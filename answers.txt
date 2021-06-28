@@ -1,0 +1,39 @@
+1. What is responsible for defining the routes of the `games` resource?
+
+-The create_router.js file/ the gamesRouter
+
+2. What do you notice about the folder structure?  Whats the client responsible for? Whats the server responsible for?
+
+-The frontend and backend folders are completely separated into client and server folders, the client is responsible
+for handling user input and performing business logic aswell as displaying information to the user, the server is 
+responsible for processing requests made by the client and performing actions on the data in the database 
+
+3. What are the the responsibilities of server.js?
+
+-Running the express server, processing the routes from fetch requests made by the front end to the db and the server
+
+4. What are the responsibilities of the `gamesRouter`?
+
+-To translate the url from the fetch request to one that is usable by the create_router and allow the server to perform the correct operation
+
+5. What process does the the client (front-end) use to communicate with the server?
+
+-fetch requests/ request,response
+
+6. What optional second argument does the `fetch` method take? And what is it used for in this application? Hint: See [Using Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) on the MDN docs
+
+-the second argument passed to a fetch is an object containing meta data or custom settings that can be applied to the request.
+-In this case on the postGame function, the object is telling the server the type of request, defaults to GET, to expect a JSON 
+body and the a stringified JSON object to be added
+
+7. Which of the games API routes does the front-end application consume (i.e. make requests to)?
+
+-GET ALL, POST & DELETE
+
+8. What are we using the [MongoDB Driver](http://mongodb.github.io/node-mongodb-native/) for?
+
+-The Driver is used to connect to connect the server to the mongoDB and interact with it
+
+Ext. Why do we need to use [`ObjectId`](https://mongodb.github.io/node-mongodb-native/api-bson-generated/objectid.html) from the MongoDB driver?
+
+-It is used to generate a unique key to differentiate between documents in the database
